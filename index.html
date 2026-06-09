@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Espírita Chave de Harmonia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #5c3c49 0%, #3d2730 50%, #663d70 100%);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .spiritist-blue {
+            background-color: #5c3c49;
+        }
+        
+        .spiritist-light {
+            background-color: #f7fafc;
+        }
+        
+        .spiritist-text {
+            color: #5c3c49;
+        }
+        
+        .spiritist-border {
+            border-color: #5c3c49;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="spiritist-blue text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-dove text-white text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-white">Chave de Harmonia</span>
+                    </div>
+                    <div class="hidden md:ml-10 md:flex md:space-x-8">
+                        <a href="#home" class="border-white text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Início</a>
+                        <a href="#about" class="border-transparent text-gray-200 hover:border-gray-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Sobre</a>
+                        <a href="#activities" class="border-transparent text-gray-200 hover:border-gray-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Atividades</a>
+                        <a href="#schedule" class="border-transparent text-gray-200 hover:border-gray-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Horários</a>
+                        <a href="#contact" class="border-transparent text-gray-200 hover:border-gray-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Contato</a>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center">
+                    <a href="#donate" class="bg-white hover:bg-gray-100 spiritist-text px-4 py-2 rounded-md text-sm font-medium transition duration-300">
+                        Doações
+                    </a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Abrir menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#home" class="bg-gray-800 border-white text-white block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Início</a>
+                <a href="#about" class="border-transparent text-gray-200 hover:bg-gray-700 hover:border-gray-300 hover:text-white block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Sobre</a>
+                <a href="#activities" class="border-transparent text-gray-200 hover:bg-gray-700 hover:border-gray-300 hover:text-white block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Atividades</a>
+                <a href="#schedule" class="border-transparent text-gray-200 hover:bg-gray-700 hover:border-gray-300 hover:text-white block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Horários</a>
+                <a href="#contact" class="border-transparent text-gray-200 hover:bg-gray-700 hover:border-gray-300 hover:text-white block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Contato</a>
+                <div class="mt-4 pl-3 pr-4">
+                    <a href="#donate" class="w-full block text-center bg-white hover:bg-gray-100 spiritist-text px-4 py-2 rounded-md text-base font-medium transition duration-300">
+                        Doações
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Centro Espírita<br>Chave de Harmonia
+                    </h1>
+                    <p class="text-xl md:text-2xl text-blue-200 mb-8">
+                        "Fora da caridade não há salvação" - Allan Kardec
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#activities" class="bg-white spiritist-text hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition duration-300">
+                            Nossas Atividades
+                        </a>
+                        <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:spiritist-text px-8 py-3 rounded-lg font-semibold text-lg transition duration-300">
+                            Nos Visite
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative floating">
+                        <img src="https://lh3.googleusercontent.com/a/ACg8ocKKCMH84EQWNfWded6VZIbimJne0jqmj135kEmkniq_reH6fWE=s288-c-no" alt="Espiritismo" class="w-64 h-64">
+                        <div class="absolute -bottom-6 -right-6 bg-white rounded-full p-4 shadow-lg">
+                            <i class="fas fa-book-open spiritist-text text-3xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold spiritist-text mb-4">Sobre Nós</h2>
+                <div class="w-20 h-1 spiritist-blue bg-blue-800 mx-auto"></div>
+            </div>
+            
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/495547421_122097254492873842_233599192692153257_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=cMSZhPugRW4Q7kNvwEwOgQP&_nc_oc=AdnCjnhvORn9BR0f8n4GBSjX4s5s6d57eBj7uBq__OOiO4vEksk7otuZr4nyeOrZrvDg-XS5uBGi8iZ6-yPolEmP&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=A3AzWBIwGsLjAuy7l_nwcA&oh=00_AfIdtLcKbNA6e3yGnF9hfHyKO6foVD7f2dJuIMsV_eGpeA&oe=683FED4F" alt="Centro Espírita" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h3 class="text-2xl font-semibold spiritist-text mb-6">Nossa História e Missão</h3>
+                    <p class="text-gray-600 mb-6">
+                        O Centro Espírita Chave de Harmonia João Maria de Jesus (CECHJMJ) foi fundado com o propósito de estudar, praticar e divulgar os princípios da Doutrina Espírita codificada por Allan Kardec, sempre pautados nos ensinamentos de Jesus Cristo.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Nossa casa espírita tem como objetivo principal promover o estudo sério e contínuo da Doutrina Espírita, oferecer apoio fraterno e assistência espiritual a todos que nos procuram, além de desenvolver atividades de caridade e promoção social.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-check-circle spiritist-text"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">
+                                <span class="font-medium">Estudo</span> da Doutrina Espírita e do Evangelho de Jesus
+                            </p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-check-circle spiritist-text"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">
+                                <span class="font-medium">Caridade</span> como princípio fundamental de nossa atuação
+                            </p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-check-circle spiritist-text"></i>
+                            </div>
+                            <p class="ml-3 text-gray-600">
+                                <span class="font-medium">Fraternidade</span> no atendimento a todos que nos procuram
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-20 spiritist-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold spiritist-text mb-4">Nossas Atividades</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Conheça nossas principais atividades e serviços</p>
+                <div class="w-20 h-1 spiritist-blue bg-blue-800 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Activity 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Estudo" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 left-0 right-0 bg-gradient-to-b from-black to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Estudo da Doutrina </h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Estudo aprofundado e contínuo da Doutrina Espírita de modo presencial e também on-line (consultar os horários).</p>
+                        <a href="#schedule" class="text-blue-700 hover:text-blue-900 font-medium">Ver horários →</a>
+                    </div>
+                </div>
+                
+                <!-- Activity 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover transition duration-300">
+                    <div class="relative">
+                        <img src="https://cecc.org.br/wp-content/uploads/2022/08/atendimento-fraterno.jpg" alt="Passes" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 left-0 right-0 bg-gradient-to-b from-black to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Atendimento Fraterno</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Atendimento individualizado com orientação espiritual, passes e água fluidificada para todos que necessitam de apoio e equilíbrio espiritual.</p>
+                        <a href="#schedule" class="text-blue-700 hover:text-blue-900 font-medium">Ver horários →</a>
+                    </div>
+                </div>
+                
+                <!-- Activity 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover transition duration-300">
+                    <div class="relative">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN4VtRM0B4dR9HljHdzbgdrQPZyzT1lVPq3w&s" alt="Evangelização" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 left-0 right-0 bg-gradient-to-b from-black to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Evangelização Infantil</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Atividades de evangelização espírita para crianças e jovens, transmitindo os valores cristãos e os princípios da Doutrina Espírita de forma lúdica e educativa.</p>
+                        <a href="#schedule" class="text-blue-700 hover:text-blue-900 font-medium">Ver horários →</a>
+                    </div>
+                </div>
+                                            
+                <!-- Activity 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Caridade" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 left-0 right-0 bg-gradient-to-b from-black to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Trabalho Social</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Atividades de assistência e promoção social, incluindo distribuição de alimentos, roupas e outros itens de necessidade básica para famílias carentes.</p>
+                        <a href="#donate" class="text-blue-700 hover:text-blue-900 font-medium">Como ajudar →</a>
+                    </div>
+                </div>
+                
+                <!-- Activity 5 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1512&q=80" alt="Palestras" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 left-0 right-0 bg-gradient-to-b from-black to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Palestras Públicas</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Palestras públicas sobre temas espíritas e evangélicos, abertas a todos os interessados em conhecer ou se aprofundar na Doutrina Espírita.</p>
+                        <a href="#schedule" class="text-blue-700 hover:text-blue-900 font-medium">Ver horários →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold spiritist-text mb-4">Nossos Horários</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Confira os dias e horários de nossas atividades</p>
+                <div class="w-20 h-1 spiritist-violet bg-violet-800 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+                    <div class="border-t border-gray-200">
+                        <dl>
+                            <!-- Segunda-feira -->
+                            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium spiritist-text">Segunda-feira</dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    <p>19:30 - 20:30: Estudo da Doutrina Espírita</p>
+                                </dd>
+                            </div>
+                            
+                            <!-- Terça-feira -->
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium spiritist-text">Terça-feira</dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    <p>20:00 - 21:00: Palestra Pública e Passe</p>
+                                    <p>19h:00 - 20:00: Atendimento Fraterno</p>
+                                    <p>20:00 - 21:00: Evangelização (crianças a partir de 5 anos)</p>
+                                </dd>
+                            </div>
+                            
+                            <!-- Quarta-feira -->
+                            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium spiritist-text">Quarta-feira</dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    <p>20:00 - 21:00: Leitura, Irradiação e Passe</p>
+                                    <p>20:00 - 21:00: Estudo on-line via Instagram</p>
+                                </dd>
+                            </div>
+                            
+                            <!-- Quinta-feira -->
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium spiritist-text">Quinta-feira</dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    <p>19:30 - 20:30: Estudo da Mediunidade</p>
+                                </dd>
+                            </div>
+                            
+                            <!-- Sexta-feira -->
+                            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium spiritist-text">Sexta-feira</dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    <p>08:30 - 09:30: Leitura, Irradiação e Passe</p>
+                                    <p>19:30 - 20:30: Grupo de estudo da Família (2ª sexta do mês)</p>
+                                </dd>
+                            </div>
+                            
+                            <!-- Sábado -->
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium spiritist-text">Sábado</dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    <p>10:00 - 11:00: Iniciação ao Espiritismo</p>
+                                    <p>14:00 - 15:00: Estudo sobre o Passe (voltado ao público que frequenta algum estudo ofertado pelo centro - 1º sábado do mês)</p>
+                                </dd>
+                            </div>
+                            
+                            <!-- Domingo -->
+                            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium spiritist-text">Domingo</dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    <p>09:00 - 10:00: Estudo do Evangelho no Lar (on-line)</p>
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-blue-50 border-l-4 border-blue-400 p-4">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-info-circle text-blue-400"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-blue-700">
+                                Algumas atividades requerem cadastro prévio. Entre em contato para mais informações.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="py-20 spiritist-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold spiritist-text mb-4">Como Ajudar</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Suas doações nos ajudam a manter nossas atividades e trabalhos sociais</p>
+                <div class="w-20 h-1 spiritist-violet bg-violet-800 mx-auto mt-4"></div>
+            </div>
+            
+            <!-- Projetos Sociais -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Projeto Cesta Fraterna -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover transition duration-300">
+                    <div class="relative h-48 bg-gradient-to-r from-purple-700 to-purple-900 flex items-center justify-center">
+                        <div class="text-center text-white p-4">
+                            <i class="fas fa-hand-holding-heart text-5xl mb-3"></i>
+                            <h3 class="text-2xl font-bold">Cesta Fraterna</h3>
+                            <p class="text-sm opacity-90">Campanha Solidária</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold spiritist-text">Cesta Fraterna</h3>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Campanha Solidária</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 italic">"Doar não é só entregar um item, é amparar com dignidade quem precisa"</p>
+                        <p class="text-gray-700 mb-4">
+                            Arrecadação de alimentos e itens essenciais para compor cestas básicas destinadas a famílias em situação de vulnerabilidade.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt spiritist-text mr-2"></i>
+                            <span>Rua Nestor Lopes da Silva, 53 - Mercês</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-600">Itens necessários:</span>
+                            <div class="flex space-x-2">
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Alimentos</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Higiene</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Limpeza</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto Campanha do Agasalho -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover transition duration-300">
+                    <div class="relative h-48 bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center">
+                        <div class="text-center text-white p-4">
+                            <i class="fas fa-tshirt text-5xl mb-3"></i>
+                            <h3 class="text-2xl font-bold">Campanha do Agasalho</h3>
+                            <p class="text-sm opacity-90">Inverno Solidário</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold spiritist-text">Campanha do Agasalho</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">Inverno Solidário</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 italic font-semibold">"Aqueça seu coração neste inverno - DOE UM AGASALHO"</p>
+                        <p class="text-gray-700 mb-4">
+                            Arrecadação de roupas, cobertores e agasalhos para distribuição às pessoas em situação de rua e famílias carentes durante o inverno.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt spiritist-text mr-2"></i>
+                            <span>Travessa Nestor Lopes da Silva, 53 - Mercês</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-600">Itens necessários:</span>
+                            <div class="flex space-x-2">
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Roupas</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Cobertores</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Calçados</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold spiritist-text mb-6">Doações Financeiras</h3>
+                    <p class="text-gray-600 mb-6">
+                        Sua contribuição financeira nos ajuda a manter a casa espírita, adquirir materiais para os trabalhos e sustentar nossos projetos sociais.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-hand-holding-usd spiritist-text"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-medium">PIX</h4>
+                                <p class="text-gray-600 text-sm">CNPJ: XX.XXX.XXX/0001-XX</p>
+                                <p class="text-gray-600 text-sm">Chave: c.e.chavedeharmonia@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-university spiritist-text"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-medium">Transferência Bancária</h4>
+                                <p class="text-gray-600 text-sm">Banco: XXX (Banco do Brasil)</p>
+                                <p class="text-gray-600 text-sm">Agência: XXXX-X Conta: XXXXX-X</p>
+                                <p class="text-gray-600 text-sm">CNPJ: XX.XXX.XXX/0001-XX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold spiritist-text mb-6">Doações Materiais</h3>
+                    <p class="text-gray-600 mb-6">
+                        Aceitamos doações de alimentos não perecíveis, roupas, materiais de higiene e outros itens para nossos trabalhos sociais.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-shopping-basket spiritist-text"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-medium">Itens Necessários</h4>
+                                <ul class="list-disc list-inside text-gray-600 text-sm">
+                                    <li>Alimentos não perecíveis</li>
+                                    <li>Roupas e calçados (novos ou em bom estado)</li>
+                                    <li>Produtos de higiene pessoal</li>
+                                    <li>Material de limpeza</li>
+                                    <li>Livros espíritas</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-clock spiritist-text"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-medium">Horário de Entrega</h4>
+                                <p class="text-gray-600 text-sm">Segunda a sexta: 19:30 - 20:00</p>
+                                <p class="text-gray-600 text-sm">Sábado: 09:00 - 12:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white p-8 rounded-lg shadow-md max-w-4xl mx-auto">
+                <h3 class="text-2xl font-semibold spiritist-text mb-6">Trabalho Voluntário</h3>
+                <p class="text-gray-600 mb-6">
+                    Além de doações materiais e financeiras, você pode contribuir com seu tempo e habilidades como voluntário em nossas atividades.
+                </p>
+                <div class="md:flex items-center">
+                    <div class="md:w-1/2 mb-6 md:mb-0">
+                        <h4 class="font-medium mb-2">Áreas que precisam de voluntários:</h4>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Atendimento Fraterno</li>
+                            <li>Evangelização Infantil</li>
+                            <li>Trabalhos Sociais</li>
+                            <li>Divulgação e Comunicação</li>
+                            <li>Manutenção do Centro</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <a href="#contact" class="inline-block bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-medium transition duration-300">
+                            Quero ser voluntário
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold spiritist-text mb-4">Entre em Contato</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Estamos à disposição para esclarecer dúvidas e receber sugestões</p>
+                <div class="w-20 h-1 spiritist-violet bg-violet-800 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="md:flex">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+                    <div class="bg-white rounded-lg shadow-xl p-8">
+                        <h3 class="text-2xl font-semibold spiritist-text mb-6">Informações de Contato</h3>
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt spiritist-text text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Endereço</h4>
+                                    <p class="mt-1 text-gray-600">Rua Nestor Lopes da Silva, 53 - Mercês</p>
+                                    <p class="text-gray-600">Curitiba/PR - CEP: 80710-070</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-phone-alt spiritist-text text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Telefone</h4>
+                                    <p class="mt-1 text-gray-600">(XX) XXXX-XXXX</p>
+                                    <p class="text-gray-600">WhatsApp: (XX) XXXXX-XXXX</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-envelope spiritist-text text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Email</h4>
+                                    <p class="mt-1 text-gray-600">c.e.chavedeharmonia@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-clock spiritist-text text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Horário de Funcionamento</h4>
+                                    <p class="mt-1 text-gray-600">Confira os dias e horários de todas as nossas atividades em "Nossos Horários"</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-semibold spiritist-text mt-12 mb-6">Redes Sociais</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/profile.php?id=61576215269668" target="_blank" class="bg-blue-700 hover:bg-blue-800 text-white p-3 rounded-full">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/chave_de_harmonia/" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@ChavedeHarmonia" target="_blank" class="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-8">
+                    <div class="bg-white rounded-lg shadow-xl p-8">
+                        <h3 class="text-2xl font-semibold spiritist-text mb-6">Envie uma Mensagem</h3>
+                          <form id="contactForm" action="https://formsubmit.co/c.e.chavedeharmonia@gmail.com" method="POST">
+                            <!-- Campos ocultos para configuração -->
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://seusite.com/obrigado.html"> <!-- URL após envio -->
+                            <input type="hidden" name="_template" value="table"> <!-- Formato do email -->
+    
+                            <!-- Campos do formulário (já existentes) -->
+                              <div class="mb-6">
+                              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome Completo</label>
+                              <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Seu nome">
+                              </div>
+                          <div class="mb-6">
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="seu.email@exemplo.com">
+                          </div>
+                      <div class="mb-6">
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefone</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="(XX) XXXXX-XXXX">
+                      </div>
+                  <div class="mb-6">
+              <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Assunto</label>
+              <select id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                  <option value="">Selecione um assunto</option>
+                  <option value="Informações sobre o Centro">Informações sobre o Centro</option>
+                  <option value="Horários de Atividades">Horários de Atividades</option>
+                  <option value="Doações">Doações</option>
+                  <option value="Trabalho Voluntário">Trabalho Voluntário</option>
+                  <option value="Outro">Outro</option>
+              </select>
+            </div>
+      <div class="mb-6">
+          <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
+          <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Sua mensagem"></textarea>
+      </div>
+    <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 px-4 rounded-md font-medium transition duration-300">
+        Enviar Mensagem
+    </button>
+</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="rounded-lg overflow-hidden shadow-xl">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.328540756484!2d-49.2986328!3d-25.4204447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f5e9d9f9e8f%3A0x8f2b9b3b3b3b3b3b!2sCentro%20Esp%C3%ADrita%20Chave%20de%20Harmonia!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="spiritist-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Chave de Harmonia</h3>
+                    <p class="text-blue-200">
+                        Centro Espírita dedicado ao estudo, prática e divulgação da Doutrina Espírita, fundamentada nos ensinamentos de Allan Kardec e Jesus Cristo.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.facebook.com/profile.php?id=61576215269668" target="_blank" class="text-blue-200 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/chave_de_harmonia/" target="_blank" class="text-blue-200 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.youtube.com/@ChavedeHarmonia" target="_blank" class="text-blue-200 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-blue-200 hover:text-white">Início</a></li>
+                        <li><a href="#about" class="text-blue-200 hover:text-white">Sobre Nós</a></li>
+                        <li><a href="#activities" class="text-blue-200 hover:text-white">Atividades</a></li>
+                        <li><a href="#schedule" class="text-blue-200 hover:text-white">Horários</a></li>
+                        <li><a href="#contact" class="text-blue-200 hover:text-white">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Recursos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Livros Espíritas</a></li>
+                        <li><a href="https://www.youtube.com/@ChavedeHarmonia" target="_blank" class="text-blue-200 hover:text-white">Estudo On-line</a></li>
+                        <li><a href="https://www.instagram.com/chave_de_harmonia/" target="_blank" class="text-blue-200 hover:text-white">Palestras Gravadas</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Biblioteca Virtual</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-blue-200 mb-4">
+                        Assine nossa newsletter para receber informações sobre nossas atividades e eventos.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu email" class="flex-grow px-4 py-2 rounded-l-md focus:outline-none text-gray-900">
+                        <button type="submit" class="bg-blue-800 hover:bg-blue-900 px-4 py-2 rounded-r-md">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-blue-200 mb-4 md:mb-0">© 2023 Centro Espírita Chave de Harmonia. Todos os direitos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-blue-200 hover:text-white text-sm">Política de Privacidade</a>
+                    <a href="#" class="text-blue-200 hover:text-white text-sm">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 spiritist-blue text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+
+    <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">
+        Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);">
+        <a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank">DeepSite</a> - 🧬 
+        <a href="https://enzostvs-deepsite.hf.space?remix=brnichio/cech-jmj" style="color: #fff;text-decoration: underline;" target="_blank">Remix</a>
+    </p>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Mensagem enviada com sucesso!');
+                    form.reset();
+                } else {
+                    throw new Error('Erro no envio');
+                }
+            })
+            .catch(error => {
+                alert('Ocorreu um erro. Por favor, tente novamente mais tarde.');
+                console.error(error);
+            });
+        });
+    </script>
+</body> 
+</html>
