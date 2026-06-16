@@ -95,7 +95,11 @@
                 <div class="mt-4 pl-3 pr-4">
                     <a href="#donate" class="w-full block text-center bg-white hover:bg-gray-100 spiritist-text px-4 py-2 rounded-md text-base font-medium transition duration-300">
                         Doações
-                    </a>
+                 <a href="#updates" 
+class="border-transparent text-gray-200 hover:border-gray-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+Atualizações
+</a>   
+					</a>
                 </div>
             </div>
         </div>
@@ -184,6 +188,118 @@
         </div>
     </section>
 
+<!-- Updates Section -->
+<section id="updates" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold spiritist-text mb-4">
+                Últimas Atualizações
+            </h2>
+
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Acompanhe os eventos, projetos e atividades recentes da nossa casa espírita.
+            </p>
+
+            <div class="w-20 h-1 spiritist-blue bg-blue-800 mx-auto mt-4"></div>
+        </div>
+
+
+        <div class="relative max-w-4xl mx-auto overflow-hidden rounded-xl shadow-xl">
+
+            <!-- Slides -->
+            <div id="updates-carousel" class="relative">
+
+                <!-- Slide 1 -->
+                <div class="update-slide">
+                    <img 
+                    src="./img/evento1.jpg"
+                    class="w-full h-[450px] object-cover">
+
+                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-6">
+                        <h3 class="text-white text-2xl font-bold">
+                            Campanha Fraterna
+                        </h3>
+
+                        <p class="text-gray-200 mt-2">
+                            Arrecadação de alimentos realizada pelos trabalhadores da casa.
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- Slide 2 -->
+                <div class="update-slide hidden">
+
+                    <img 
+                    src="./img/evento2.jpg"
+                    class="w-full h-[450px] object-cover">
+
+                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-6">
+
+                        <h3 class="text-white text-2xl font-bold">
+                            Estudo da Doutrina
+                        </h3>
+
+                        <p class="text-gray-200 mt-2">
+                            Novos grupos de estudo e aprendizado espiritual.
+                        </p>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Slide 3 -->
+                <div class="update-slide hidden">
+
+                    <img 
+                    src="./img/evento3.jpg"
+                    class="w-full h-[450px] object-cover">
+
+                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-6">
+
+                        <h3 class="text-white text-2xl font-bold">
+                            Trabalho Social
+                        </h3>
+
+                        <p class="text-gray-200 mt-2">
+                            Ações de assistência e solidariedade.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Botões -->
+            <button 
+            onclick="changeUpdate(-1)"
+            class="absolute left-4 top-1/2 bg-white p-3 rounded-full shadow">
+
+                <i class="fas fa-chevron-left"></i>
+
+            </button>
+
+
+
+            <button 
+            onclick="changeUpdate(1)"
+            class="absolute right-4 top-1/2 bg-white p-3 rounded-full shadow">
+
+                <i class="fas fa-chevron-right"></i>
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+</section>
     <!-- Activities Section -->
     <section id="activities" class="py-20 spiritist-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -793,6 +909,51 @@
                 console.error(error);
             });
         });
+// Carrossel de atualizações
+
+let updateIndex = 0;
+
+const updateSlides = document.querySelectorAll(".update-slide");
+
+
+function showUpdate(index){
+
+    updateSlides.forEach(slide=>{
+        slide.classList.add("hidden");
+    });
+
+
+    updateSlides[index].classList.remove("hidden");
+
+}
+
+
+
+function changeUpdate(direction){
+
+    updateIndex += direction;
+
+
+    if(updateIndex >= updateSlides.length){
+        updateIndex = 0;
+    }
+
+
+    if(updateIndex < 0){
+        updateIndex = updateSlides.length -1;
+    }
+
+
+    showUpdate(updateIndex);
+
+}
+
+
+// troca automática a cada 5 segundos
+
+setInterval(()=>{
+    changeUpdate(1);
+},5000);
     </script>
 </body> 
 </html>
